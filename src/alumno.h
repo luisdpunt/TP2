@@ -19,36 +19,37 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-/** \brief Archivo MAIN del TP2
+#ifndef TEMPLATE_H
+#define TEMPLATE_H
+
+/** \brief Declaraciones publicas de Alumno
  **
- ** Full file description
- **
- ** \addtogroup name Module denomination
- ** \brief Brief description of the module
+ ** \addtogroup alumno Alumnos
+ ** \brief Modulo para gestion de alumnos
  ** @{ */
 
-/* === Headers files inclusions =============================================================== */
+/* === Headers files inclusions ================================================================ */
 
-#include "alumno.h"
+/* === Cabecera C++ ============================================================================ */
 
-/* === Macros definitions ====================================================================== */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-/* === Private data type declarations ========================================================== */
+/* === Public macros definitions =============================================================== */
 
-/* === Private variable declarations =========================================================== */
+/* === Public data type declarations =========================================================== */
 
-/* === Private function declarations =========================================================== */
+/* === Public variable declarations ============================================================ */
 
-/* === Public variable definitions ============================================================= */
+/* === Public function declarations ============================================================ */
 
-/* === Private variable definitions ============================================================ */
-
-/* === Private function implementation ========================================================= */
-
-/* === Public function implementation ========================================================== */
-int main(void) {
-    return 0;
-}
 /* === End of documentation ==================================================================== */
 
+#ifdef __cplusplus
+}
+#endif
+
 /** @} End of module definition for doxygen */
+
+#endif /* TEMPLATE_H */

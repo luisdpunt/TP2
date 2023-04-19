@@ -19,12 +19,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-/** \brief Brief description of the file
+/** \brief Declaraciones publicas de Alumno
  **
- ** Full file description
- **
- ** \addtogroup name Module denomination
- ** \brief Brief description of the module
+ ** \addtogroup alumno Alumnos
+ ** \brief Modulo para gestion de alumnos
  ** @{ */
 
 /* === Headers files inclusions =============================================================== */
