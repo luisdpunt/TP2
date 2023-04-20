@@ -35,11 +35,22 @@ SPDX-License-Identifier: MIT
 
 /* === Private function declarations =========================================================== */
 
+static int SerializarCadena(const alumno_t dato, char cadena[], uint32_t espacio);
+static int SerializarNumero(const alumno_t dato, char cadena[], uint32_t espacio);
+
 /* === Public variable definitions ============================================================= */
 
 /* === Private variable definitions ============================================================ */
 
 /* === Private function implementation ========================================================= */
+
+static int SerializarCadena(const alumno_t dato, char cadena[], uint32_t espacio){
+    return 0;
+}
+
+static int SerializarNumero(const alumno_t dato, char cadena[], uint32_t espacio){
+    return 0;
+}
 
 /* === Public function implementation ========================================================== */
 

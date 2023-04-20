@@ -38,11 +38,21 @@ extern "C" {
 
 /* === Public macros definitions =============================================================== */
 
+#include <stdint.h>
+
 /* === Public data type declarations =========================================================== */
+
+typedef struct alumno_s {
+    char apellido[50];
+    char nombre[50];
+    uint32_t DNI;
+}alumno_t;
 
 /* === Public variable declarations ============================================================ */
 
 /* === Public function declarations ============================================================ */
+
+int Serializar(const alumno_t dato, char cadena[], uint32_t espacio);
 
 /* === End of documentation ==================================================================== */
 
