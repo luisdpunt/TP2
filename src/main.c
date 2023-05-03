@@ -30,16 +30,12 @@ SPDX-License-Identifier: MIT
 /* === Headers files inclusions =============================================================== */
 
 #include "alumno.h"
+#include "stdio.h"
 
 /* === Macros definitions ====================================================================== */
 
 /* === Private data type declarations ========================================================== */
 
-typedef struct alumno_s {
-    char apellido[50];
-    char nombre[50];
-    uint32_t DNI;
-} * alumno_t;
 /* === Private variable declarations =========================================================== */
 
 /* === Private function declarations =========================================================== */

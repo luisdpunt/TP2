@@ -48,13 +48,13 @@ typedef struct alumno_s {
     char apellido[SIZE_APELLIDO];
     char nombre[SIZE_NOMBRE];
     uint32_t DNI;
-} * alumno_t;
+} const * alumno_t;
 
 /* === Public variable declarations ============================================================ */
 
 /* === Public function declarations ============================================================ */
 
-int Serializar(const alumno_t alumno, char cadena[], uint32_t espacio);
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio);
 
 /* === End of documentation ==================================================================== */
 
