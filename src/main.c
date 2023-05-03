@@ -35,6 +35,11 @@ SPDX-License-Identifier: MIT
 
 /* === Private data type declarations ========================================================== */
 
+typedef struct alumno_s {
+    char apellido[50];
+    char nombre[50];
+    uint32_t dni;
+} * alumno_t;
 /* === Private variable declarations =========================================================== */
 
 /* === Private function declarations =========================================================== */
@@ -47,6 +52,10 @@ SPDX-License-Identifier: MIT
 
 /* === Public function implementation ========================================================== */
 int main(void) {
+    struct alumno_s yo;
+    
+    strncpy(yo.apellido, "Di Pinto", SIZE_APELLIDO);
+    
     return 0;
 }
 /* === End of documentation ==================================================================== */

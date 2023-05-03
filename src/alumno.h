@@ -39,14 +39,16 @@ extern "C" {
 /* === Public macros definitions =============================================================== */
 
 #include <stdint.h>
+#define SIZE_APELLIDO 50
+#define SIZE_NOMBRE 50
 
 /* === Public data type declarations =========================================================== */
 
 typedef struct alumno_s {
-    char apellido[50];
-    char nombre[50];
+    char apellido[SIZE_APELLIDO];
+    char nombre[SIZE_NOMBRE];
     uint32_t DNI;
-}alumno_t;
+} * alumno_t;
 
 /* === Public variable declarations ============================================================ */
 
