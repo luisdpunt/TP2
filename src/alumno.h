@@ -54,7 +54,7 @@ typedef struct alumno_s {
 
 /* === Public function declarations ============================================================ */
 
-int Serializar(const alumno_t dato, char cadena[], uint32_t espacio);
+int Serializar(const alumno_t alumno, char cadena[], uint32_t espacio);
 
 /* === End of documentation ==================================================================== */
 

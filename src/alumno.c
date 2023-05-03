@@ -19,6 +19,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
+
+
 /** \brief Declaraciones publicas de Alumno
  **
  ** \addtogroup alumno Alumnos
@@ -26,6 +28,9 @@ SPDX-License-Identifier: MIT
  ** @{ */
 
 /* === Headers files inclusions =============================================================== */
+
+#include "alumno.h"
+#include "stdio.h"
 
 /* === Macros definitions ====================================================================== */
 
@@ -35,8 +40,8 @@ SPDX-License-Identifier: MIT
 
 /* === Private function declarations =========================================================== */
 
-static int SerializarCadena(const alumno_t dato, char cadena[], uint32_t espacio);
-static int SerializarNumero(const alumno_t dato, char cadena[], uint32_t espacio);
+static int SerializarCadena(char * campo, char * valor, char * cadena, int espacio);
+static int SerializarNumero(char * campo, int valor, char * cadena, int espacio);
 
 /* === Public variable definitions ============================================================= */
 
@@ -44,15 +49,43 @@ static int SerializarNumero(const alumno_t dato, char cadena[], uint32_t espacio
 
 /* === Private function implementation ========================================================= */
 
-static int SerializarCadena(const alumno_t dato, char cadena[], uint32_t espacio){
-    return 0;
+static int SerializarCadena(char * campo, char * valor, char * cadena, int espacio){
+    return snprintf(cadena, espacio, "\"%s\":\"%s", campo, valor);
 }
 
-static int SerializarNumero(const alumno_t dato, char cadena[], uint32_t espacio){
-    return 0;
-}
+static int SerializarNumero(char * campo, int valor, char * cadena, int espacio){
+    return snprintf(cadena, espacio, "\"%s\":\"%d", campo, valor);
+    }
 
 /* === Public function implementation ========================================================== */
+
+int Serializar(const alumno_t alumno, char cadena[], uint32_t espacio){
+    int disponibles = espacio;
+    int resultado;
+    int largo = 0;
+    
+    cadena[0]='{';
+    cadena++;
+    disponibles--;
+
+    resultado = SerializarCadena("apellido", &alumno->apellido, cadena, espacio);
+    if(resultado > 0){
+        disponibles -= resultado;
+        cadena += resultado;
+        resultado = SerializarCadena("nombre", &alumno->nombre, cadena, espacio);
+    }
+    if(resultado > 0){
+        disponibles -= resultado;
+        cadena += resultado;
+        resultado = SerializarNumero("DNI", &alumno->DNI, cadena, espacio);
+    }
+    if(resultado > 0){
+        cadena += resultado;
+        *cadena = '}';
+        resultado = espacio - disponibles;
+    }
+    return resultado;
+}
 
 /* === End of documentation ==================================================================== */
 

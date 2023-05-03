@@ -38,7 +38,7 @@ SPDX-License-Identifier: MIT
 typedef struct alumno_s {
     char apellido[50];
     char nombre[50];
-    uint32_t dni;
+    uint32_t DNI;
 } * alumno_t;
 /* === Private variable declarations =========================================================== */
 
@@ -52,10 +52,23 @@ typedef struct alumno_s {
 
 /* === Public function implementation ========================================================== */
 int main(void) {
-    struct alumno_s yo;
-    
-    strncpy(yo.apellido, "Di Pinto", SIZE_APELLIDO);
-    
+
+    static const struct alumno_s yo = {
+        .apellido = "Di Pinto",
+        .nombre = "Luis",
+        .DNI = 32413432,
+    };
+    char cadena[120];
+    int resultado;
+
+    if(Serializar(&yo, cadena, sizeof(cadena))>= 0){
+        printf("%s\n", cadena);
+
+    }else{
+        printf("ERROR");
+
+    };
+
     return 0;
 }
 /* === End of documentation ==================================================================== */
